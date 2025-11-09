@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS bd_mundo;
 USE bd_mundo;
 
--- Tabela de Países
 CREATE TABLE IF NOT EXISTS paises (
     id_pais INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL UNIQUE,
@@ -10,17 +9,15 @@ CREATE TABLE IF NOT EXISTS paises (
     idioma VARCHAR(50) NOT NULL
 );
 
--- Tabela de Cidades
 CREATE TABLE IF NOT EXISTS cidades (
     id_cidade INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     populacao BIGINT NOT NULL,
     id_pais INT NOT NULL,
     FOREIGN KEY (id_pais) REFERENCES paises(id_pais)
-        ON DELETE RESTRICT -- Garante a integridade: não permite excluir país com cidades
+        ON DELETE RESTRICT -- Segurança
 );
 
--- Inserir alguns dados de exemplo
 INSERT INTO paises (nome, continente, populacao, idioma) VALUES
 ('Brasil', 'América do Sul', 214000000, 'Português'),
 ('Canadá', 'América do Norte', 38000000, 'Inglês/Francês'),

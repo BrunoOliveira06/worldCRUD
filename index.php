@@ -74,13 +74,12 @@ $mensagem = isset($_GET['mensagem']) ? htmlspecialchars($_GET['mensagem']) : '';
     <script src="js/script.js"></script>
     <script src="js/api_paises.js"></script>
 
-    <!-- Modal para Detalhes do País -->
+    <!-- Detalhamento do País -->
     <div id="modalDetalhes" class="modal" style="display:none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
         <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; border-radius: 8px;">
             <span class="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
             <h2>Detalhes do País: <span id="paisNomeModal"></span></h2>
             <div id="detalhesConteudo">
-                <!-- Conteúdo da API será injetado aqui -->
             </div>
         </div>
     </div>
